@@ -1,0 +1,47 @@
+{
+    "name": "vesvasi/vesvasi-php",
+    "description": "Production-grade PHP APM SDK built on OpenTelemetry with custom vesvasi attributes",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Vesvasi\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vesvasi\\Tests\\": "tests/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/vesvasi/vesvasi-php"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "open-telemetry/sdk": "^1.0",
+        "open-telemetry/exporter-otlp": "^1.0",
+        "open-telemetry/transport-grpc": "^1.0",
+        "guzzlehttp/guzzle": "^7.0",
+        "psr/log": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0 || ^11.0",
+        "mockery/mockery": "^1.6"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "test": "phpunit",
+        "test:coverage": "XDEBUG_MODE=coverage phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true,
+            "tbachert/spi": true
+        }
+    }
+}
